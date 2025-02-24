@@ -38,7 +38,7 @@ export default async function MainCTA() {
             href="/kontakt"
             className="bg-white px-7 py-4 rounded-full font-medium text-primary text-lg"
           >
-            Skontaktuj się z nami
+            Umów się na konsultację
           </Link>
         </div>
       </div>
