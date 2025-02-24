@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
@@ -33,11 +27,11 @@ export default async function RootLayout({
     <html lang="pl">
       <body
         style={{ "--primary": data.data.primaryColor } as React.CSSProperties}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${jakarta.className} antialiased`}
       >
         <Header />
         <main>{children}</main>
-        <Footer />
+        <Footer companyName={data.data.companyName} />
       </body>
     </html>
   );
