@@ -19,7 +19,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/global-config`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/global-config?populate=*`
   );
   const data = await response.json();
 
@@ -29,7 +29,7 @@ export default async function RootLayout({
         style={{ "--primary": data.data.primaryColor } as React.CSSProperties}
         className={`${jakarta.className} antialiased`}
       >
-        <Header />
+        <Header logo={data.data.logo} />
         <main>{children}</main>
         <Footer companyName={data.data.companyName} />
       </body>

@@ -42,7 +42,7 @@ export default async function Hero() {
         height={height}
         placeholder="blur"
         blurDataURL={base64}
-        className="mt-5 rounded-2xl"
+        className="mt-5 rounded-3xl"
       />
     </section>
   );
