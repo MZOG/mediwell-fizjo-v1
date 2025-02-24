@@ -3,7 +3,7 @@ import getBase64 from "@/utils/getBase64";
 
 export default async function About() {
   const response = await fetch(
-    "http://localhost:1337/api/homepage-about?populate=*"
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/homepage-about?populate=*`
   );
   const data = await response.json();
   const {
@@ -13,7 +13,7 @@ export default async function About() {
     about_image: { alternativeText, height, width, url },
   } = data.data;
   return (
-    <>
+    <div className="mt-20">
       <Image
         src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${url}`}
         alt={alternativeText}
@@ -25,6 +25,6 @@ export default async function About() {
       <p>{lead_text}</p>
       <p>{description_text}</p>
       <p>{button_text}</p>
-    </>
+    </div>
   );
 }

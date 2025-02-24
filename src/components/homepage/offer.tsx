@@ -2,7 +2,9 @@ import Image from "next/image";
 import getBase64 from "@/utils/getBase64";
 
 export default async function Offer() {
-  const response = await fetch("http://localhost:1337/api/offers?populate=*");
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/offers?populate=*`
+  );
   const data = await response.json();
 
   type Offer = {
@@ -23,7 +25,7 @@ export default async function Offer() {
 
   return (
     <>
-      <div>
+      <div className="mt-20">
         <p>Oferta</p>
         <h2>W czym mogę Ci pomóc?</h2>
         <div className="grid grid-cols-3">

@@ -2,7 +2,9 @@ import Image from "next/image";
 import getBase64 from "@/utils/getBase64";
 
 export default async function Hero() {
-  const response = await fetch("http://localhost:1337/api/homepage?populate=*");
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/homepage?populate=*`
+  );
   const data = await response.json();
 
   const {

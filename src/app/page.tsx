@@ -4,7 +4,7 @@ import Offer from "@/components/homepage/offer";
 import Testimonials from "@/components/homepage/testimonials";
 import MainCTA from "@/components/main-cta";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <Hero />
