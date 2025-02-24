@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
+import withPlaiceholder from "@plaiceholder/next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+export default withPlaiceholder(nextConfig);
