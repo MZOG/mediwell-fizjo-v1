@@ -12,33 +12,35 @@ export default async function MainCTA() {
   };
 
   return (
-    <div className="mt-10 max-w-7xl mx-auto bg-primary rounded-full px-10 py-5 flex gap-10 items-center">
-      <div className="flex gap-4 items-center">
-        <div className="bg-white rounded-full p-4 text-primary">
-          <Phone />
+    <div className="mt-10 max-w-7xl mx-auto px-5">
+      <div className="flex gap-10 items-center px-10 py-5 bg-primary rounded-full">
+        <div className="flex gap-4 items-center">
+          <div className="bg-white rounded-full p-4 text-primary">
+            <Phone />
+          </div>
+          <a
+            href={`tel:+48${data.phone}`}
+            className="text-white text-lg font-medium"
+          >
+            {formatPhone(data.phone)}
+          </a>
         </div>
-        <a
-          href={`tel:+48${data.phone}`}
-          className="text-white text-lg font-medium"
-        >
-          {formatPhone(data.phone)}
-        </a>
-      </div>
 
-      <div className="flex gap-4 items-center text-primary">
-        <div className="bg-white rounded-full p-4">
-          <MapPin />
+        <div className="flex gap-4 items-center text-primary">
+          <div className="bg-white rounded-full p-4">
+            <MapPin />
+          </div>
+          <p className="text-white text-lg font-medium">{data.address}</p>
         </div>
-        <p className="text-white text-lg font-medium">{data.address}</p>
-      </div>
 
-      <div className="ml-auto">
-        <Link
-          href="/kontakt"
-          className="bg-white px-7 py-4 rounded-full font-medium text-primary text-lg"
-        >
-          Skontaktuj się z nami
-        </Link>
+        <div className="ml-auto">
+          <Link
+            href="/kontakt"
+            className="bg-white px-7 py-4 rounded-full font-medium text-primary text-lg"
+          >
+            Skontaktuj się z nami
+          </Link>
+        </div>
       </div>
     </div>
   );

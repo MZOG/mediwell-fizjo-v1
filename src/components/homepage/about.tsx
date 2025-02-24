@@ -6,12 +6,22 @@ export default async function About() {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/homepage-about?populate=*`
   );
   const data = await response.json();
+
+  if (
+    !data?.data.about_image ||
+    !data.data.button_text ||
+    !data.data.description_text ||
+    !data.data.lead_text
+  )
+    return null;
+
   const {
     lead_text,
     description_text,
     button_text,
     about_image: { alternativeText, height, width, url },
-  } = data.data;
+  } = data?.data;
+
   return (
     <div className="mt-20">
       <Image
