@@ -4,8 +4,6 @@ export default async function Testimonials() {
   );
   const data = await response.json();
 
-  console.log(data);
-
   type Testimonial = {
     FullName: string;
     Content: string;
@@ -19,15 +17,17 @@ export default async function Testimonials() {
         <p>Opinie</p>
         <h2>Poznaj opinie klientów</h2>
         <div className="grid grid-cols-2">
-          {data.data.map(async (testimonial: Testimonial, index: number) => {
-            const { FullName, Content } = testimonial;
-            return (
-              <div key={index}>
-                <p>{Content}</p>
-                <p>{FullName}</p>
-              </div>
-            );
-          })}
+          {data.data
+            .slice(0, 2) // Display only 2 testimonials
+            .map(async (testimonial: Testimonial, index: number) => {
+              const { FullName, Content } = testimonial;
+              return (
+                <div key={index}>
+                  <p>{Content}</p>
+                  <p>{FullName}</p>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
