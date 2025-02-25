@@ -13,6 +13,7 @@ export default async function Hero() {
     hero_text,
     lead_text,
     button_text,
+    button_href,
     hero_image: { alternativeText, height, width, url },
   } = data.data;
 
@@ -30,7 +31,7 @@ export default async function Hero() {
         </p>
         <div className="mt-5 lg:mt-8">
           <Button asChild>
-            <Link href="/kontakt">{button_text}</Link>
+            <Link href={button_href}>{button_text}</Link>
           </Button>
         </div>
       </div>

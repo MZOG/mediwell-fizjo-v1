@@ -13,7 +13,7 @@ export default async function MainCTA() {
 
   return (
     <div className="mt-10 max-w-7xl mx-auto px-5">
-      <div className="flex gap-10 items-center px-10 py-5 bg-primary rounded-full">
+      <div className="flex flex-col md:flex-row gap-10 items-center px-10 py-5 bg-primary rounded-2xl md:rounded-full">
         <div className="flex gap-4 items-center">
           <div className="bg-white rounded-full p-4 text-primary">
             <Phone />
@@ -35,7 +35,7 @@ export default async function MainCTA() {
 
         <div className="ml-auto">
           <Link
-            href="/kontakt"
+            href="/konsultacja"
             className="bg-white px-7 py-4 rounded-full font-medium text-primary text-lg"
           >
             Umów się na konsultację

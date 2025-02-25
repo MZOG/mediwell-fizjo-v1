@@ -36,7 +36,7 @@ export default async function Offer({
         <h2 className="mt-1 lg:text-4xl font-bold md:text-center text-white">
           W czym mogę Ci pomóc?
         </h2>
-        <div className="grid grid-cols-3 mt-16 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-16 gap-5">
           {data.data
             .slice(0, numberOfOffers)
             .map(async (offer: Offer, index: number) => {
